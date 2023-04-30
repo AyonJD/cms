@@ -171,7 +171,11 @@ function EditClient() {
             // Update the paymentTracker array
             setInput(prev => ({ ...prev, clientServices: selectedServices, paymentTracker: innerPaymentTracker }));
 
-            // const updatedInput = { ...input};
+            const updatedInput = {
+                ...input,
+                clientServices: selectedServices,
+                paymentTracker: innerPaymentTracker
+            };
 
             // const res = await createClient(updatedInput, token);
             // if (res.status === 200) {

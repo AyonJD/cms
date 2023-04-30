@@ -148,7 +148,11 @@ function AddClient() {
             // Update the paymentTracker array
             setInput(prev => ({ ...prev, clientServices: selectedServices, paymentTracker: innerPaymentTracker }));
 
-            const updatedInput = { ...input };
+            const updatedInput = {
+                ...input,
+                clientServices: selectedServices,
+                paymentTracker: innerPaymentTracker
+            };
 
             const res = await createClient(updatedInput, token);
             if (res.status === 200) {
@@ -158,8 +162,6 @@ function AddClient() {
             console.log(err);
         }
     };
-
-    console.log(input)
 
     return (
         <>
