@@ -1,0 +1,40 @@
+.initial {
+    color: #1976D2;
+    border: 1px solid #1976d283 !important;
+}
+
+.visa_color {
+    color: #5330C1 !important;
+}
+
+.visa_background {
+    background-color: #5330C1 !important;
+    color: #fff !important;
+    border: 1px solid transparent !important;
+}
+
+.passport_color {
+    color: #4233FF !important;
+}
+
+.passport_background {
+    background-color: #4233FF !important;
+    color: #fff !important;
+    border: 1px solid transparent !important;
+}
+
+.tutor_color {
+    color: #3176A8 !important;
+}
+
+.tutor_background {
+    background-color: #3176A8 !important;
+    color: #fff !important;
+    border: 1px solid transparent !important;
+}
+
+.common_bg {
+    background-color: #1976D2 !important;
+    color: #fff !important;
+    border: 1px solid transparent !important;
+}

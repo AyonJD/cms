@@ -1,0 +1,47 @@
+.popup_wrapper {
+    position: fixed;
+    z-index: 10000;
+    top: 0;
+    left: 0;
+    width: 100vw !important;
+    height: 100vh !important;
+    backdrop-filter: blur(2px);
+    background-color: rgba(0, 0, 0, 0.3);
+    /* fallback color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup_content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 50%;
+    max-height: 500px;
+    overflow-y: auto;
+    position: relative;
+}
+
+.cross_icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-right: 10px;
+    height: 10px;
+    width: 10px;
+}
+
+.margin_bottom_16px{
+    margin-bottom: 16px;
+}
+
+@media screen and (max-width: 768px) {
+    .popup_content {
+        width: 90%;
+    }
+
+}

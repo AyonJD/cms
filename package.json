@@ -1,0 +1,50 @@
+{
+  "name": "CMS",
+  "version": "1.0.0",
+  "title": "CMS",
+  "description": "Client Management Solution (Enterprise Version) project is designed to help you manage your clients and improve your sales performance. With its comprehensive features, you will be able to streamline your operations and provide excellent customer service to your clients",
+  "private": false,
+  "dependencies": {
+    "@emotion/cache": "11.7.1",
+    "@emotion/react": "11.9.0",
+    "@emotion/server": "11.4.0",
+    "@emotion/styled": "11.8.1",
+    "@material-ui/core": "^4.12.4",
+    "@material-ui/icons": "^4.11.3",
+    "@mui/icons-material": "5.8.2",
+    "@mui/lab": "5.0.0-alpha.84",
+    "@mui/material": "5.8.2",
+    "@mui/styles": "5.8.0",
+    "axios": "^1.3.5",
+    "clsx": "1.1.1",
+    "date-fns": "2.28.0",
+    "jspdf": "^2.5.1",
+    "jspdf-autotable": "^3.5.28",
+    "jwt-decode": "^3.1.2",
+    "next": "12.1.6",
+    "next-images": "1.8.4",
+    "nprogress": "0.2.0",
+    "numeral": "^2.0.6",
+    "prop-types": "^15.8.1",
+    "react": "^17.0.2",
+    "react-custom-scrollbars-2": "4.4.0",
+    "react-dom": "17.0.2",
+    "react-spring": "^9.7.1"
+  },
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "export": "next export",
+    "lint": "next lint",
+    "lint-fix": "next lint --fix",
+    "format": "prettier --write \"./**/*.{js,jsx,json}\" --config ./.prettierrc"
+  },
+  "devDependencies": {
+    "eslint": "8.17.0",
+    "eslint-config-next": "12.1.6",
+    "eslint-config-prettier": "8.5.0",
+    "eslint-plugin-prettier": "4.0.0",
+    "prettier": "2.6.2"
+  }
+}
