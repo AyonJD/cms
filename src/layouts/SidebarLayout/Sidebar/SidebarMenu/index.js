@@ -213,6 +213,21 @@ function SidebarMenu() {
                 </NextLink>
               </ListItem>
               <ListItem component="div">
+                <NextLink href="/cms/trackpayment" passHref>
+                  <Button
+                    className={
+                      currentRoute === '/cms/trackpayment' ? 'active' : ''
+                    }
+                    disableRipple
+                    component="a"
+                    onClick={closeSidebar}
+                    startIcon={<BrightnessLowTwoToneIcon />}
+                  >
+                    Track Payment
+                  </Button>
+                </NextLink>
+              </ListItem>
+              <ListItem component="div">
                 <NextLink href="/cms/auth/login" passHref>
                   <Button
                     className={

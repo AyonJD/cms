@@ -154,6 +154,8 @@ function AddClient() {
                 paymentTracker: innerPaymentTracker
             };
 
+            console.log(updatedInput, 'updatedInput')
+
             const res = await createClient(updatedInput, token);
             if (res.status === 200) {
                 alert('Client added successfully.');
