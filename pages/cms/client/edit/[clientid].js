@@ -33,6 +33,9 @@ function EditClient() {
 
         // Service data-------------->
         serviceStates: {},
+
+        // Tracking paid amount for each service by the paid date
+        paymentTracker: [],
     });
     const [services, setServices] = useState({});
     const [allServices, setAllServices] = useState([]);
@@ -141,7 +144,33 @@ function EditClient() {
         setInput(prev => ({ ...prev, clientServices: selectedServices }));
 
         try {
-            const updatedInput = { ...input, clientServices: selectedServices };
+            let innerPaymentTracker = [];
+
+            // Function to add a new payment record
+            function addPaymentRecord(serviceName, paidAmount, paymentDate) {
+                // Create a new object with the provided data
+                let paymentRecord = {
+                    serviceName: serviceName,
+                    paidAmount: paidAmount,
+                    paymentDate: paymentDate
+                };
+
+                // Push the new object into the paymentTracker array
+                innerPaymentTracker.push(paymentRecord);
+            }
+
+            input.serviceStates && Object.keys(input.serviceStates).forEach(service => {
+                if (service.includes('PaidAmount')) {
+                    const serviceName = service.split('PaidAmount')[0];
+                    const paidAmount = input.serviceStates[`${serviceName}PaidAmount`];
+                    const paymentDate = new Date();
+                    addPaymentRecord(serviceName, paidAmount, paymentDate);
+                }
+            });
+
+            // Update the paymentTracker array
+            setInput(prev => ({ ...prev, clientServices: selectedServices, paymentTracker: innerPaymentTracker }));
+
             // const res = await createClient(updatedInput, token);
             // if (res.status === 200) {
             //     alert('Client added successfully.');
@@ -266,7 +295,7 @@ function EditClient() {
                                                             </Typography>
                                                         </Grid>
                                                         <Grid item xs={12} sm={4}>
-                                                            <TextField disabled name={`${key}PaymentAmount`} value={input.serviceStates[`${key}PaymentAmount`]} onChange={(e) => handleChange(e, setInput)} fullWidth label='Payment Amount' placeholder='' />
+                                                            <TextField disabled name={`${key}PaymentAmount`} value={input.serviceStates[`${key}PaymentAmount`]} fullWidth label='Payment Amount' placeholder='' />
                                                         </Grid>
                                                         <Grid item xs={12} sm={4}>
                                                             <TextField name={`${key}PaidAmount`} value={input.serviceStates[`${key}PaidAmount`]} onChange={(e) => handleChange(e, setInput, key)} fullWidth label='Paid Amount' placeholder='' />
