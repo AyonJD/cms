@@ -8,8 +8,10 @@ import { SITETITLE } from '../utils/constant';
 
 import { useEffect } from 'react';
 import { verifyExpiredToken } from '../utils/utils';
+import { useRouter } from 'next/router';
 
 function Dashboard() {
+  const router = useRouter();
 
   /* This code block is using the `useEffect` hook to check if the user is logged in by retrieving the
   access token from the local storage. If the access token exists, it decodes the token using
@@ -24,6 +26,7 @@ function Dashboard() {
 
     if (!isLoggedIn) {
       localStorage.removeItem('accessToken');
+      router.push('/cms/auth/login');
     }
   }, []);
 

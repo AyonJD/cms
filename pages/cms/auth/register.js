@@ -15,6 +15,7 @@ import {
 import { Visibility, VisibilityOff, Lock } from '@mui/icons-material';
 import { useSpring, animated } from 'react-spring';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 
 const RegisterCard = styled(Card)({
     maxWidth: 500, // Adjust the width here
@@ -107,6 +108,7 @@ const useStyles = () => ({
 
 const Register = () => {
     const classes = useStyles();
+    const router = useRouter();
 
     const [values, setValues] = useState({
         firstName: '',
@@ -153,6 +155,7 @@ const Register = () => {
         // Set the access token to local storage
         if (accessToken) {
             localStorage.setItem('accessToken', accessToken);
+            router.push('/');
         }
 
         // reset form

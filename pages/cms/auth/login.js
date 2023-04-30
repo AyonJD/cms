@@ -18,6 +18,7 @@ import { useSpring, animated } from 'react-spring';
 import Head from 'next/head';
 import ClientOnly from '../../ClientOnly';
 import { loginUser } from '../../../apis/auth.api';
+import { useRouter } from 'next/router';
 
 const RegisterCard = styled(Card)({
     maxWidth: 400, // Adjust the width here
@@ -115,6 +116,7 @@ const useStyles = () => ({
 
 export default function Login() {
     const classes = useStyles();
+    const router = useRouter();
 
     const [values, setValues] = useState({
         email: '',
@@ -159,6 +161,7 @@ export default function Login() {
         // Set the access token to local storage
         if (accessToken) {
             localStorage.setItem('accessToken', accessToken);
+            router.push('/');
         }
         // reset the form
         setValues({
