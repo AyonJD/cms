@@ -25,38 +25,9 @@ export const handleChange = (e, setInput, key) => {
                 [`${serviceTitle}DueAmount`]: dueAmount
             };
 
-            const paymentTracker = [...prevState.paymentTracker];
-            const serviceIndex = paymentTracker.findIndex(
-                (s) => s.service === serviceTitle
-            );
-
-            if (serviceIndex >= 0) {
-                const lastPayment = paymentTracker[serviceIndex].payments[
-                    paymentTracker[serviceIndex].payments.length - 1
-                ];
-                if (lastPayment.paidAmount !== paidAmount) {
-                    paymentTracker[serviceIndex].payments.push({
-                        paidAmount: paidAmount,
-                        paidDate: new Date(),
-                    });
-                }
-            } else {
-                paymentTracker.push({
-                    service: serviceTitle,
-                    payments: [
-                        {
-                            paidAmount: paidAmount,
-                            paidDate: new Date(),
-                        },
-                    ],
-                });
-            }
-
-
             return {
                 ...prevState,
                 serviceStates: updatedServiceStates,
-                // paymentTracker: paymentTracker,
                 currentlyDue: calculateTotalDue({ ...prevState, serviceStates: updatedServiceStates }, key, dueAmount),
             };
         });

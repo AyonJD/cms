@@ -148,6 +148,8 @@ function AddClient() {
             // Update the paymentTracker array
             setInput(prev => ({ ...prev, clientServices: selectedServices, paymentTracker: innerPaymentTracker }));
 
+            const updatedInput = { ...input };
+
             const res = await createClient(updatedInput, token);
             if (res.status === 200) {
                 alert('Client added successfully.');
