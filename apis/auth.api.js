@@ -9,15 +9,23 @@ import { LOGIN_USER_URL, SIGNUP_USER_URL } from '../utils/urls.js';
  * SIGNUP_USER_URL endpoint with the user_data and withCredentials set to true.
  */
 export const signUpUser = async (user_data) => {
-    const response = await axios.post(SIGNUP_USER_URL, user_data, { withCredentials: true });
-    const accessToken = response.headers.authorization && response.headers.authorization.split(' ')[1];
+  const response = await axios.post(SIGNUP_USER_URL, user_data, {
+    withCredentials: true
+  });
+  const accessToken =
+    response.headers.authorization &&
+    response.headers.authorization.split(' ')[1];
 
-    return accessToken;
-}
+  return accessToken;
+};
 
 export const loginUser = async (user_data) => {
-    const response = await axios.post(LOGIN_USER_URL, user_data, { withCredentials: true });
-    const accessToken = response.headers.authorization && response.headers.authorization.split(' ')[1];
+  const response = await axios.post(LOGIN_USER_URL, user_data, {
+    withCredentials: true
+  });
+  const accessToken =
+    response.headers.authorization &&
+    response.headers.authorization.split(' ')[1];
 
-    return accessToken;
-}
+  return accessToken;
+};

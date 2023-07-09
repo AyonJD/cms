@@ -12,7 +12,7 @@ const PaymentTrackerChart = ({ paymentTracker }) => {
         };
 
         // Group the data by service name
-        const groupedData = paymentTracker.reduce((accumulator, currentValue) => {
+        const groupedData = paymentTracker?.reduce((accumulator, currentValue) => {
             const { serviceName } = currentValue;
             if (!(serviceName in accumulator)) {
                 accumulator[serviceName] = [];
