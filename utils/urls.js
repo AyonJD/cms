@@ -1,5 +1,5 @@
-// export const BASE_URL = 'https://cms-server-omega.vercel.app';
-export const BASE_URL = 'http://localhost:8000';
+export const BASE_URL = 'https://cms-server-omega.vercel.app';
+// export const BASE_URL = 'http://localhost:8000';
 export const SIGNUP_USER_URL = `${BASE_URL}/auth/signup_user`;
 export const LOGIN_USER_URL = `${BASE_URL}/auth/login_user`;
 
